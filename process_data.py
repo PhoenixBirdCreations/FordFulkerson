@@ -69,7 +69,7 @@ for index, row in edges.iterrows():
     capacities.append(row['capacity'])
 #%%
     
-#%% Translate sizes into colors
+#%% Translate capacities into colors
 colors_dict = {4:'#e41a1c', 9:'#377eb8', 16:'#4daf4a'}
 colors = []
 for cap in capacities:
@@ -89,7 +89,7 @@ plt.xlabel('Longitude')
 plt.ylabel('Latitude')
 line_segments = LineCollection(lines, colors=colors, linewidths=4)
 ax.add_collection(line_segments)
-custom_lines = [Line2D([0], [0], color=colors_dict.get(4), lw=3),
+custom_lines = [Line2D([0], [0], color=colors_dict.get(4), lw=4),
                 Line2D([0], [0], color=colors_dict.get(9), lw=4),
                 Line2D([0], [0], color=colors_dict.get(16), lw=4)]
 ax.legend(custom_lines, [4, 9, 16], title='Capacity:')
